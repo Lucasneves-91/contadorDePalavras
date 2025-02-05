@@ -15,5 +15,10 @@ public class Main {
         System.out.println("Digite a frase que você quer contar as palavras: ");
         String frase = leitor.nextLine();
 
+        String[] palavras = frase.split(" ");
+        int numeroDePalavras = palavras.length;
+
+        System.out.println("A frase possui " + numeroDePalavras + " palavras.");
+
     }
 }
