@@ -12,13 +12,36 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner leitor = new Scanner(System.in);
+        String frase;
         System.out.println("Digite a frase que você quer contar as palavras: ");
-        String frase = leitor.nextLine();
+        frase = leitor.nextLine();
 
         String[] palavras = frase.split(" ");
         int numeroDePalavras = palavras.length;
 
         System.out.println("A frase possui " + numeroDePalavras + " palavras.");
+
+        System.out.println("Você quer digitar outra frase? (s/n)");
+        String resposta = leitor.nextLine();
+        switch (resposta){
+            case "s":
+                System.out.println("Digite a frase que você quer contar as palavras: ");
+                frase = leitor.nextLine();
+
+                palavras = frase.split(" ");
+                numeroDePalavras = palavras.length;
+
+                System.out.println("A frase possui " + numeroDePalavras + " palavras.");
+                break;
+            case "n":
+                System.out.println("Obrigado!");
+                break;
+            default:
+                System.out.println("Opção inválida!" +
+                        "Obrigado!");
+        }
+
+
 
     }
 }
