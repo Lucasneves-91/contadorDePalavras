@@ -11,37 +11,51 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner leitor = new Scanner(System.in);
-        String frase;
-        System.out.println("Digite a frase que você quer contar as palavras: ");
-        frase = leitor.nextLine();
+        Scanner scanner = new Scanner(System.in);
+        String continuar = "s";
 
-        String[] palavras = frase.split(" ");
-        int numeroDePalavras = palavras.length;
+        while (continuar.equalsIgnoreCase("s")){
 
-        System.out.println("A frase possui " + numeroDePalavras + " palavras.");
+            contarPalavras();
 
-        System.out.println("Você quer digitar outra frase? (s/n)");
-        String resposta = leitor.nextLine();
-        switch (resposta){
-            case "s":
-                System.out.println("Digite a frase que você quer contar as palavras: ");
-                frase = leitor.nextLine();
-
-                palavras = frase.split(" ");
-                numeroDePalavras = palavras.length;
-
-                System.out.println("A frase possui " + numeroDePalavras + " palavras.");
-                break;
-            case "n":
-                System.out.println("Obrigado!");
-                break;
-            default:
-                System.out.println("Opção inválida!" +
-                        "Obrigado!");
+            System.out.println("Você quer digitar outra frase? (s/n)");
+            continuar = scanner.nextLine();
         }
 
+        System.out.println("Sistema encerrado!");
+        scanner.close();
+
+        }
+        public static void contarPalavras(){
+            Scanner scanner = new Scanner(System.in);
+            String frase;
+            System.out.println("Digite a frase que você quer contar as palavras: ");
+            frase = scanner.nextLine();
+
+            String[] palavras = frase.split(" ");
+            int numeroDePalavras = palavras.length;
+            System.out.println("A frase possui " + numeroDePalavras + " palavras.");
+
+        }
+
+// System.out.println("Você quer digitar outra frase? (s/n)");
+//        String resposta = leitor.nextLine();
+//        switch (resposta){
+//            case "s":
+//                System.out.println("Digite a frase que você quer contar as palavras: ");
+//                frase = leitor.nextLine();
+//
+//                palavras = frase.split(" ");
+//                numeroDePalavras = palavras.length;
+//
+//                System.out.println("A frase possui " + numeroDePalavras + " palavras.");
+//                break;
+//            case "n":
+//                System.out.println("Obrigado!");
+//                break;
+//            default:
+//                System.out.println("Opção inválida!" +
+//                        "Obrigado!");
 
 
     }
-}
